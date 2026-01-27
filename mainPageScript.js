@@ -24,7 +24,7 @@ const showHistoryButton = document.getElementById('showHistoryButton');
 
 const constraints = {
     video: {
-        facingMode: { ideal: "environment" }
+        facingMode: "environment"
     }
 };
 
