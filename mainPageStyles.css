@@ -44,30 +44,29 @@ h1 {
     gap: 1rem;
 }
 
+
 .colorBox {
-    height: 80%;
-    aspect-ratio: 1 / 1;
-    width: auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 0.5rem;
-}
-
-#hexBox {
-    height: 90%;
-    aspect-ratio: 1 / 1;
-    width: auto;
+    flex: 1;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
 
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
     padding: 1rem;
+}
 
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.2);
+.colorBox .labels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
 
+#hexBox {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
@@ -77,9 +76,9 @@ h1 {
 #colorName {
     font-size: 1.2rem;
     font-weight: 700;
+    color: white;
+    text-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.6);
 }
-
-
 #canvas {
     display: block;
     aspect-ratio: 1 / 1;
