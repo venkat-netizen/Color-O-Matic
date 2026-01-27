@@ -2,7 +2,9 @@ import colorsList from './colorsList.js';
 
 const hexBox = document.getElementById('hexBox');
 const colorName = document.getElementById('colorName');
+
 const freezeButton = document.getElementById('freezeButton');
+const showHistoryButton = document.getElementById('showHistoryButton');
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
@@ -19,11 +21,11 @@ let colorHistory = JSON.parse(localStorage.getItem(colorHistoryKey)) || [];
 
 let lastHex = null;
 let lastColorName = null;
-
-const showHistoryButton = document.getElementById('showHistoryButton');
-
-
 let video = document.querySelector('#liveVideo');
+
+
+
+
 
 navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}})
     .then(function(stream) {
@@ -31,7 +33,6 @@ navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}})
 
         requestAnimationFrame(frames);
     });
-
 
 freezeButton.addEventListener('click', () => {
     isFrozen = !isFrozen;

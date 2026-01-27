@@ -25,17 +25,16 @@ h1 {
 .RightSide {
     flex: 1;
     display: flex;
-    flex-direction: column;   /* ✅ stack items vertically */
-    align-items: flex-end;    /* keep them on the right */
-    justify-content: flex-start;  /* ✅ top */
-       /* center vertically */
-    gap: 1rem;                /* spacing between box and buttons */
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 1rem;
     padding-right: 1rem;
 }
 
 .colorBox {
-    height: 80%;              /* ✅ controls how big the square area is */
-    aspect-ratio: 1 / 1;      /* ✅ keeps it square */
+    height: 80%;
+    aspect-ratio: 1 / 1;
     width: auto;
 
     display: flex;
