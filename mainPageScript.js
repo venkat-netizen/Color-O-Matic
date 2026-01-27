@@ -22,16 +22,15 @@ let lastColorName = null;
 
 const showHistoryButton = document.getElementById('showHistoryButton');
 
-
-console.log("isSecureContext:", window.isSecureContext);
-console.log("protocol:", location.protocol);
-console.log("host:", location.host);
-console.log("mediaDevices:", !!navigator.mediaDevices);
-console.log("getUserMedia:", !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia));
+const constraints = {
+    video: {
+        facingMode: { ideal: "environment" }
+    }
+};
 
 let video = document.querySelector('#liveVideo');
 
-navigator.mediaDevices.getUserMedia({ video: true })
+navigator.mediaDevices.getUserMedia(constraints)
     .then(function(stream) {
         video.srcObject = stream;
 
