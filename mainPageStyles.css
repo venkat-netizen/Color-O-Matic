@@ -75,6 +75,12 @@ h1 {
     display: block;
 }
 
+
+.layout {
+    height: calc(100dvh - 5rem);
+}
+
+
 /*Phone and Tablet*/
 
 @media (max-width: 900px) {
@@ -119,5 +125,21 @@ h1 {
 
     #colorName {
         text-align: left;
+    }
+}
+
+/*Smaller phones*/
+@media (max-width: 420px) {
+    h1 { padding: 0.75rem; }
+
+    .layout { gap: 0.75rem; }
+
+    #hexBox {
+        padding: 0.75rem;
+        font-size: 1.2rem;
+    }
+
+    #colorName {
+        font-size: 1.05rem;
     }
 }
