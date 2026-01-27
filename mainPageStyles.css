@@ -86,21 +86,20 @@ h1 {
         overflow: hidden;
     }
 
-    .VideoPlayerSide {
-        flex: 0 0 55%;
-        min-height: 0;
-        justify-content: center;
-    }
-
     .infoSide {
         flex: 0 0 45%;
         min-height: 0;
         align-items: stretch;
     }
 
-    .colorBox { height: auto; width: 100%; }
-    #hexBox { width: 100%; aspect-ratio: 1 / 1; height: auto; }
+    #hexBox {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+
+        max-height: 60%;
 }
+
 
 
 @media (orientation: landscape) {
