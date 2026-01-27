@@ -86,43 +86,37 @@ h1 {
 }
 
 /* Portrait rules*/
-/* important so flex children can actually split */
+
 .VideoPlayerSide,
 .RightSide {
     min-width: 0;
     min-height: 0;
 }
 
-/* Portrait: stack, exact half of remaining height (minus gap) */
 @media (orientation: portrait) {
-    .layout {
-        flex-direction: column;
-    }
-
-    .VideoPlayerSide,
-    .RightSide {
-        flex: 0 0 calc((100% - var(--gap)) / 2);
-    }
-
-    /* canvas should fit its side without forcing size */
-    #canvas {
-        height: 100%;
-        width: auto;
-        max-width: 100%;
-        max-height: 100%;
-        display: block;
-    }
-
-    .VideoPlayerSide {
-        justify-content: center;
-    }
-
     .RightSide {
         align-items: stretch;
     }
+
+    .colorBox {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        justify-content: flex-start;
+    }
+
+    #hexBox {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    #colorName {
+        width: 100%;
+    }
 }
 
-/* Landscape: side-by-side, exact half of remaining width (minus gap) */
+
 @media (orientation: landscape) {
     .layout {
         flex-direction: row;
