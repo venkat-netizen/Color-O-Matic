@@ -1,3 +1,13 @@
+:root {
+    --topbar-h: 5rem;
+    --pad: 1rem;
+    --gap: 1rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -9,9 +19,13 @@ h1 {
     padding: 1rem;
 }
 
+
 .layout {
+    height: calc(100dvh - var(--topbar-h));
     display: flex;
-    height: calc(100vh - 5rem);
+    gap: var(--gap);
+    padding: 0 var(--pad) var(--pad);
+    overflow: hidden;
 }
 
 .VideoPlayerSide {
@@ -19,7 +33,6 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 1rem;
 }
 
 .RightSide {
@@ -29,7 +42,6 @@ h1 {
     align-items: flex-end;
     justify-content: flex-start;
     gap: 1rem;
-    padding-right: 1rem;
 }
 
 .colorBox {
@@ -42,8 +54,6 @@ h1 {
     justify-content: flex-end;
     gap: 0.5rem;
 }
-
-
 
 #hexBox {
     height: 90%;
@@ -69,68 +79,58 @@ h1 {
     font-weight: 700;
 }
 
+
 #canvas {
-    height: 100%;
-    width: auto;
     display: block;
+    aspect-ratio: 1 / 1;
 }
 
-
-.layout {
-    height: calc(100dvh - 5rem);
-}
-
-
-/*Phone and Tablet*/
-
-@media (max-width: 1024px) {
-
+/* Portrait rules*/
+@media (orientation: portrait) {
     .layout {
-        display: grid;
-        grid-template-rows: 65% 35%;
-        height: calc(100dvh - 5rem);
-    }
-
-    .VideoPlayerSide,
-    .RightSide {
-        flex: unset;
-        width: 100%;
-        height: 100%;
+        flex-direction: column;
     }
 
     .VideoPlayerSide {
-        display: flex;
-        align-items: center;
         justify-content: center;
-        padding-left: 0;
     }
 
-
     #canvas {
-        height: min(100%, 100vw);
-        width: auto;
-        aspect-ratio: 1 / 1;
-        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 100%;
     }
 
     .RightSide {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 0.75rem;
-        gap: 0.5rem;
+        align-items: stretch;
+        padding: 0;
     }
 
     .colorBox {
-        flex: 1;
-        min-height: 0;
         width: 100%;
+        height: auto;
     }
 
     #hexBox {
-        max-height: 100%;
+        width: 100%;
+        height: auto;
     }
 }
-*, *::before, *::after {
-    box-sizing: border-box;
+
+/* Landscape rules*/
+
+@media (orientation: landscape) {
+    .layout {
+        flex-direction: row;
+    }
+
+    .VideoPlayerSide {
+        justify-content: flex-start;
+    }
+
+    #canvas {
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+    }
 }
