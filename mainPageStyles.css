@@ -87,12 +87,9 @@ h1 {
 
     .layout {
         display: grid;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 65% 35%;
         height: calc(100dvh - 5rem);
-        gap: 0;
-        padding: 0;
     }
-
 
     .VideoPlayerSide,
     .RightSide {
@@ -119,22 +116,21 @@ h1 {
     .RightSide {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-        padding: 1rem;
-        gap: 1rem;
+        justify-content: space-between;
+        padding: 0.75rem;
+        gap: 0.5rem;
     }
 
     .colorBox {
-        width: 100%;
         flex: 1;
-        height: auto;
+        min-height: 0;
+        width: 100%;
     }
 
     #hexBox {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1;
         max-height: 100%;
     }
+}
+*, *::before, *::after {
+    box-sizing: border-box;
 }
