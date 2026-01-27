@@ -2,7 +2,7 @@ import colorsList from './colorsList.js';
 
 const hexBox = document.getElementById('hexBox');
 const colorName = document.getElementById('colorName');
-const rightSide = document.getElementById("rightSide");
+const infoSide = document.getElementById("infoSide");
 
 
 const freezeButton = document.getElementById('freezeButton');
@@ -70,7 +70,7 @@ function frames() {
     const colorNameText = getColorFromRgb(rgb);
 
     hexBox.textContent = hex;
-    rightSide.style.backgroundColor = hex;
+    infoSide.style.backgroundColor = hex;
     colorName.textContent = colorNameText;
 
     lastHex = hex;
