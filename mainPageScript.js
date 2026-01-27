@@ -22,15 +22,10 @@ let lastColorName = null;
 
 const showHistoryButton = document.getElementById('showHistoryButton');
 
-const constraints = {
-    video: {
-        facingMode: "environment"
-    }
-};
 
 let video = document.querySelector('#liveVideo');
 
-navigator.mediaDevices.getUserMedia(constraints)
+navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}})
     .then(function(stream) {
         video.srcObject = stream;
 
