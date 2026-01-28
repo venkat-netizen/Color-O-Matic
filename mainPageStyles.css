@@ -140,3 +140,23 @@ h1{
         max-width: 100%;
     }
 }
+
+.infoSide #hexBox,
+.infoSide #colorName,
+.infoSide .label,
+.infoSide .value {
+    display: inline-block;
+    max-width: 100%;
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.55rem;
+
+    background: rgba(0,0,0,0.45);
+    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
+    backdrop-filter: blur(6px); /* optional */
+}
+
+/* Optional: hide empty text boxes */
+.infoSide #hexBox:empty,
+.infoSide #colorName:empty {
+    display: none;
+}
