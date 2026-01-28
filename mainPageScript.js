@@ -69,9 +69,10 @@ function frames() {
     const hex = getHexFromRgb(rgb)
     const colorNameText = getColorFromRgb(rgb);
 
-    hexBox.textContent = hex;
+    hexBox.textContent = hex.toUpperCase();
+    colorName.textContent = colorNameText.toUpperCase();
     infoSide.style.backgroundColor = hex;
-    colorName.textContent = colorNameText;
+
 
     lastHex = hex;
     lastColorName = colorNameText;
