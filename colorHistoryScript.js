@@ -12,6 +12,7 @@ window.location.href = "index.html";
 
 historyWindow.innerHTML = '';
 
+let colorDate;
 for (const entry of colorHistory) {
 
     //row
@@ -27,8 +28,14 @@ for (const entry of colorHistory) {
     //text
     const text = document.createElement('div');
     text.className = 'ColorEntryName';
+
+    const colorTimeInformation = new Date(entry.time);
+    const date = colorTimeInformation.toLocaleDateString();
+    const time = colorTimeInformation.toLocaleTimeString();
+
+
     text.textContent =
-        `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) on ${entry.date} at ${entry.time}`;
+        `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) on ${date} at ${time}`;
 
 
     row.appendChild(colorPicture);
