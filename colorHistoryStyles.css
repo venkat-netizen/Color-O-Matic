@@ -15,21 +15,22 @@
     --shadow-1: 0 0.6rem 1.6rem rgba(0,0,0,0.55);
     --shadow-2: 0 0.15rem 0.45rem rgba(0,0,0,0.45);
     --lift:     0 0 0 0.06rem rgba(255,255,255,0.06) inset;
+    
+}
 
-    .colorEntryRow{
-        color: var(--text);
-    }
+.colorEntryRow{
+    color: var(--text);
+}
 
-    .colorEntryRow > *{
-        display: inline-block;
-        max-width: 100%;
-        padding: 0.2rem 0.55rem;
-        border-radius: 0.55rem;
+.colorEntryRow > *{
+    display: inline-block;
+    max-width: 100%;
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.55rem;
 
-        background: rgba(0,0,0,0.45);
-        box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
-        backdrop-filter: blur(6px); /* optional; remove if you want */
-    }
+    background: rgba(0,0,0,0.45);
+    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
+    backdrop-filter: blur(6px); /* optional; remove if you want */
 }
 
 html{ font-size: 16px; }
@@ -103,7 +104,7 @@ body{
             rgba(255,255,255,0.04),
             rgba(255,255,255,0.00)
     );
-    
+
     box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
 }
 
