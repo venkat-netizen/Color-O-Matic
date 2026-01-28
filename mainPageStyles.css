@@ -204,9 +204,6 @@ html, body{
 @media (max-width: 768px) {
 
 
-    html { font-size: 18px; }
-
-
     .infoSide #hexBox,
     .infoSide #colorName{
         font-size: 1.1rem;
