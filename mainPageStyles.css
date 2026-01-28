@@ -191,7 +191,7 @@ html, body{
 
     background: rgba(0,0,0,0.45);
     box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
-    backdrop-filter: blur(6px); 
+    backdrop-filter: blur(6px);
 }
 
 
@@ -200,28 +200,4 @@ html, body{
     display: none;
 }
 
-/* ---------- MOBILE TEXT + BUTTON BOOST ---------- */
-@media (max-width: 768px) {
-
-
-    .topbar h1{
-        font-size: 1.2rem;
-    }
-
-    .infoSide #hexBox,
-    .infoSide #colorName{
-        font-size: 1.1rem;
-        line-height: 1.25;
-        padding: 0.35rem 0.8rem;
-        border-radius: 0.75rem;
-    }
-
-
-    #freezeButton,
-    #showHistoryButton{
-        font-size: 1.05rem;
-        min-height: 44px;
-        border-radius: 0.9rem;
-    }
-}
 
