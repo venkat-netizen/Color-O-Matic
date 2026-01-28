@@ -204,8 +204,6 @@ html, body{
 @media (max-width: 768px) {
 
 
-    html { font-size: 18px; }
-
     .topbar h1{
         font-size: 1rem;
     }
@@ -224,8 +222,8 @@ html, body{
     #freezeButton,
     #showHistoryButton{
         font-size: 1.05rem;
-        padding: 0.8rem 1rem;
-        min-height: 48px;
+        padding: 0.6rem 0.8rem;
+        min-height: 44px;
         border-radius: 0.9rem;
     }
 
