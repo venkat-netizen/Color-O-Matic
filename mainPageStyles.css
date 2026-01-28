@@ -32,15 +32,22 @@ html, body{
 }
 
 
-h1{
-    margin: 0;
+.topbar{
     height: var(--topbar-h);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 1rem;
 
     background: var(--topbar-bg);
     box-shadow: var(--shadow-1), var(--lift);
+}
+
+.topbar h1{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    display: block;
 }
 
 
@@ -78,6 +85,29 @@ h1{
 .infoSide{
     background-color: var(--panel-b);
     padding: 1rem;
+}
+
+.infoSide{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* top row stays top, Freeze stays bottom */
+    align-items: flex-start;        /* left aligned */
+    gap: 1rem;
+}
+
+.infoTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* top-left */
+    gap: 0.75rem;
+}
+
+.labels{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 
@@ -128,7 +158,7 @@ h1{
     }
 
     .infoSide{
-        align-items: stretch;
+        align-items: flex-start;
         justify-content: space-between;
         gap: 1rem;
     }

@@ -8,7 +8,10 @@
 <body>
 
 
-<h1>COLOR-O-MATIC</h1>
+<header class="topbar">
+    <h1>COLOR-O-MATIC</h1>
+    <button id="showHistoryButton">History</button>
+</header>
 
 <main class="layout">
     <div class="VideoPlayerSide">
@@ -17,17 +20,17 @@
     </div>
 
     <div class="infoSide" id="infoSide">
-        <div class="labels">
-            <div id="hexBox"></div>
-            <div id="colorName"></div>
-
-            <button id="freezeButton">Freeze</button>
-            <button id="showHistoryButton">Show History</button>
+        <div class="infoTop">
+            <div class="labels">
+                <div id="hexBox"></div>
+                <div id="colorName"></div>
+            </div>
         </div>
 
-
+        <button id="freezeButton">Freeze</button>
     </div>
 </main>
+
 
 
 
