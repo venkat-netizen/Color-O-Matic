@@ -194,8 +194,39 @@ html, body{
     backdrop-filter: blur(6px); /* optional */
 }
 
-/* Optional: hide empty text boxes */
+
 .infoSide #hexBox:empty,
 .infoSide #colorName:empty {
     display: none;
 }
+
+/* ---------- MOBILE TEXT + BUTTON BOOST ---------- */
+@media (max-width: 768px) {
+
+
+    html { font-size: 18px; }
+
+
+    .infoSide #hexBox,
+    .infoSide #colorName{
+        font-size: 1.1rem;
+        line-height: 1.25;
+        padding: 0.35rem 0.8rem;
+        border-radius: 0.75rem;
+    }
+
+
+    #freezeButton,
+    #showHistoryButton{
+        font-size: 1.05rem;
+        padding: 0.8rem 1rem;
+        min-height: 48px;
+        border-radius: 0.9rem;
+    }
+
+
+    #freezeButton{
+        width: 100%;
+    }
+}
+
