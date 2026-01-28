@@ -42,7 +42,7 @@ body{
 }
 
 
-.top-bar{
+.topbar{
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -52,7 +52,7 @@ body{
     box-shadow: var(--shadow-1), var(--lift);
 }
 
-.top-bar h1{
+.topbar h1{
     margin: 0;
     font-size: 1.5rem;
 }
@@ -130,7 +130,7 @@ body{
 }
 
 @media (max-width: 480px) {
-    
+
     .colorEntryRow{
         width: 15rem;
         height: 15rem;
