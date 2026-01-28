@@ -45,7 +45,7 @@ html, body{
 
 .topbar h1{
     margin: 0;
-    padding: 0;
+    /*padding: 0;*/
 }
 
 
@@ -54,10 +54,9 @@ html, body{
     display: flex;
     gap: var(--gap);
     padding: 0 var(--pad) var(--pad);
-    /*overflow: hidden;*/
 }
 
-
+/*Take a closer look here*/
 .VideoPlayerSide,
 .infoSide{
     min-width: 0;
@@ -101,66 +100,27 @@ html, body{
 
 
 .infoTop{
+
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 0.75rem;
     flex-wrap: wrap;
+
 }
 
 
 
 #canvas{
+
     display: block;
     aspect-ratio: 1 / 1;
-
-
 
     max-width: 100%;
     max-height: 100%;
 }
 
-/* ---------- PORTRAIT ---------- */
-@media (orientation: portrait){
-    .layout{ flex-direction: column; }
-
-    .VideoPlayerSide{
-        flex: 0 0 50%;
-
-    }
-
-    .infoSide{
-        flex: 0 0 50%;
-
-        gap: 0.75rem;
-
-    }
-
-    #canvas{
-        height: 100%;
-        width: auto;
-
-    }
-}
-
-
-/* ---------- LANDSCAPE ---------- */
-@media (orientation: landscape){
-    .layout{ flex-direction: row; }
-
-    .VideoPlayerSide,
-    .infoSide{
-        flex: 0 0 calc((100% - var(--gap)) / 2);
-        /*overflow: hidden;*/
-    }
-
-    #canvas{
-        height: auto;
-        width: 100%;
-
-    }
-}
 
 #freezeButton,
 #showHistoryButton{
@@ -172,9 +132,8 @@ html, body{
 }
 
 
-/*.infoSide #hexBox,
-.infoSide #colorName,
-.infoSide .value {
+.infoSide #hexBox,
+.infoSide #colorName{
     display: inline-block;
     max-width: 100%;
     padding: 0.2rem 0.55rem;
@@ -183,7 +142,50 @@ html, body{
     background: rgba(0,0,0,0.45);
     box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
     backdrop-filter: blur(6px);
-}*/
+}
+
+
+/* ---------- PORTRAIT ---------- */
+@media (orientation: portrait){
+
+    .layout{
+        flex-direction: column;
+    }
+
+    .VideoPlayerSide{
+        flex: 0 0 50%;
+    }
+
+    .infoSide{
+        flex: 0 0 50%;
+        gap: 0.75rem;
+    }
+
+    #canvas{
+        height: 100%;
+        width: auto;
+    }
+}
+
+
+/* ---------- LANDSCAPE ---------- */
+@media (orientation: landscape){
+
+    .layout{
+        flex-direction: row;
+    }
+
+    .VideoPlayerSide,
+    .infoSide{
+        flex: 0 0 calc((100% - var(--gap)) / 2);
+    }
+
+    #canvas{
+        height: auto;
+        width: 100%;
+
+    }
+}
 
 
 
