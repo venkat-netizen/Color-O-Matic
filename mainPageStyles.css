@@ -1,33 +1,50 @@
-:root {
+:root{
     --topbar-h: 5rem;
     --pad: 1rem;
     --gap: 1rem;
 
-    --page-bg: #f2f2f2;
-    --video-bg: #e6e6e6;
-    --info-bg: #dcdcdc;
+    --page-bg:  #0b0d10;
+    --topbar-bg:#0f1216;
+    --panel-a:  #12161c;
+    --panel-b:  #171c23;
+    --surface:  #1d232c;
+
+    --text:     #e7edf5;
+    --muted:    #a8b3c3;
+
     --radius: 1rem;
-    --shadow: 0 0.25rem 0.9rem rgba(0, 0, 0, 0.18);
+
+
+    --shadow-1: 0 0.6rem 1.6rem rgba(0,0,0,0.55);
+    --shadow-2: 0 0.15rem 0.45rem rgba(0,0,0,0.45);
+    --lift:     0 0 0 0.06rem rgba(255,255,255,0.06) inset;
 }
+
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html, body {
+html, body{
     margin: 0;
     padding: 0;
     height: 100%;
-    background: var(--page-bg); /* NEW */
+    background: var(--page-bg);
+    color: var(--text);
 }
 
-h1 {
+
+h1{
     margin: 0;
-    padding: 1rem;
+    height: var(--topbar-h);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
 
-    background: #ededed;
-    box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.12);
+    background: var(--topbar-bg);
+    box-shadow: var(--shadow-1), var(--lift);
 }
 
-.layout {
+
+.layout{
     height: calc(100dvh - var(--topbar-h));
     display: flex;
     gap: var(--gap);
@@ -35,42 +52,45 @@ h1 {
     overflow: hidden;
 }
 
+
 .VideoPlayerSide,
-.infoSide {
+.infoSide{
     min-width: 0;
     min-height: 0;
-
-
-    background: var(--video-bg);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
 
 
-.infoSide {
-    background: var(--info-bg);
+    box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
+
+
+    background-image: linear-gradient(
+            180deg,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.00)
+    );
 }
 
-/* Optional: give panels some internal padding so content isn’t glued to edges */
-.infoSide {
-    padding: 1rem;
-}
-.VideoPlayerSide {
+.VideoPlayerSide{
+    background-color: var(--panel-a);
     padding: 0.5rem;
 }
 
-#canvas {
+.infoSide{
+    background-color: var(--panel-b);
+    padding: 1rem;
+}
+
+
+#canvas{
     display: block;
     aspect-ratio: 1 / 1;
 }
 
 /* ---------- PORTRAIT ---------- */
-@media (orientation: portrait) {
-    .layout {
-        flex-direction: column;
-    }
+@media (orientation: portrait){
+    .layout{ flex-direction: column; }
 
-    .VideoPlayerSide {
+    .VideoPlayerSide{
         flex: 0 0 50%;
         display: flex;
         align-items: center;
@@ -78,7 +98,7 @@ h1 {
         overflow: hidden;
     }
 
-    .infoSide {
+    .infoSide{
         flex: 0 0 50%;
         display: flex;
         flex-direction: column;
@@ -86,7 +106,7 @@ h1 {
         gap: 0.75rem;
     }
 
-    #canvas {
+    #canvas{
         height: 100%;
         width: auto;
         max-height: 100%;
@@ -95,12 +115,11 @@ h1 {
 }
 
 /* ---------- LANDSCAPE ---------- */
-@media (orientation: landscape) {
-    .layout {
-        flex-direction: row;
-    }
+@media (orientation: landscape){
+    .layout{ flex-direction: row; }
 
-    .VideoPlayerSide {
+    .VideoPlayerSide,
+    .infoSide{
         flex: 0 0 calc((100% - var(--gap)) / 2);
         display: flex;
         align-items: center;
@@ -108,15 +127,13 @@ h1 {
         overflow: hidden;
     }
 
-    .infoSide {
-        flex: 0 0 calc((100% - var(--gap)) / 2);
-        display: flex;
-        flex-direction: column;
+    .infoSide{
+        align-items: stretch;
         justify-content: space-between;
         gap: 1rem;
     }
 
-    #canvas {
+    #canvas{
         height: 100%;
         width: auto;
         max-height: 100%;
