@@ -191,7 +191,7 @@ html, body{
 
     background: rgba(0,0,0,0.45);
     box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
-    backdrop-filter: blur(6px); /* optional */
+    backdrop-filter: blur(6px); 
 }
 
 
@@ -205,10 +205,8 @@ html, body{
 
 
     .topbar h1{
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
-
-
 
     .infoSide #hexBox,
     .infoSide #colorName{
@@ -224,11 +222,6 @@ html, body{
         font-size: 1.05rem;
         min-height: 44px;
         border-radius: 0.9rem;
-    }
-
-
-    #freezeButton{
-        width: 100%;
     }
 }
 
