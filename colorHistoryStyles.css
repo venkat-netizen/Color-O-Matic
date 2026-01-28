@@ -1,25 +1,63 @@
-html {
-    font-size: 16px;
+:root{
+    --page-bg:   #0b0d10;
+    --topbar-bg: #0f1216;
+
+    --panel:     #12161c;
+    --panel-2:   #171c23;
+    --surface:   #1d232c;
+
+    --text:      #e7edf5;
+    --muted:     #a8b3c3;
+
+    --radius: 0.75rem;
+
+
+    --shadow-1: 0 0.6rem 1.6rem rgba(0,0,0,0.55);
+    --shadow-2: 0 0.15rem 0.45rem rgba(0,0,0,0.45);
+    --lift:     0 0 0 0.06rem rgba(255,255,255,0.06) inset;
+
+
+    --swatch-ring: 0 0 0 0.14rem rgba(120, 170, 255, 0.35);
 }
 
-.top-bar {
+html{ font-size: 16px; }
+
+body{
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text);
+}
+
+
+.top-bar{
     display: flex;
     align-items: center;
-
     gap: 0.75rem;
     padding: 0.75rem 1rem;
+
+    background: var(--topbar-bg);
+    box-shadow: var(--shadow-1), var(--lift);
 }
 
-.top-bar h1 {
+.top-bar h1{
     margin: 0;
     font-size: 1.5rem;
 }
 
-#backButton {
-    background: none;
+#backButton{
+    background: transparent;
+    color: var(--text);
+    border: 0;
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0.25rem;
+
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.08) inset;
+}
+
+#backButton:hover{
+    background: rgba(255,255,255,0.06);
 }
 
 
@@ -28,28 +66,73 @@ html {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 1rem;
 }
 
-.colorEntryRow {
+
+.colorEntryRow{
     width: 12rem;
     height: 12rem;
     padding: 1rem;
 
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-
     justify-content: flex-end;
     align-items: flex-start;
-
-
     gap: 0.5rem;
 
-    border: 2px solid black;
+    border: 0;
+    border-radius: var(--radius);
 
-    border-radius: 0.5rem;
-    background-color: gray;
 
-    box-shadow: 0 0.125rem 0.4rem rgba(0, 0, 0, 0.15);
+    background-color: var(--panel);
+    background-image: linear-gradient(
+            180deg,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.00)
+    );
+
+
+    box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
 }
+
+.colorEntryRow:hover{
+    background-color: var(--panel-2);
+}
+
+
+.colorEntryRow{
+    position: relative;
+}
+
+.colorEntryRow::before{
+    content: "";
+    position: absolute;
+    inset: 0.7rem;
+    border-radius: calc(var(--radius) - 0.2rem);
+    pointer-events: none;
+
+
+    box-shadow: var(--swatch-ring), 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
+    opacity: 0.9;
+}
+
+.colorEntryRow,
+.colorEntryRow *{
+    text-shadow:
+            0 1px 0 rgba(0,0,0,0.75),
+            0 0 2px rgba(0,0,0,0.85),
+            1px 0 0 rgba(0,0,0,0.75),
+            -1px 0 0 rgba(0,0,0,0.75),
+            0 1px 0 rgba(0,0,0,0.75),
+            0 -1px 0 rgba(0,0,0,0.75);
+}
+
+.colorEntryRow .label,
+.colorEntryRow .value{
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.5rem;
+    background: rgba(0,0,0,0.35);
+    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.12) inset;
+}
+
