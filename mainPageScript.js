@@ -43,7 +43,7 @@ freezeButton.addEventListener('click', () => {
         freezeButton.textContent = 'UNFREEZE';
         addToColorHistory(lastHex, lastColorName);
     } else {
-        freezeButton.textContent = 'FREEZE';
+        freezeButton.textContent = 'FREEZE / SAVE';
         frames();
 
     }
