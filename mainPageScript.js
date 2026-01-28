@@ -12,7 +12,7 @@ const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
 const colorHistoryKey = "color-history";
-const maxColorHistory = 4; //test
+const maxColorHistory = 20;
 
 const range = 40;
 const xValue = Math.floor((canvas.width / 2) - (range / 2));

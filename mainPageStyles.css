@@ -90,8 +90,8 @@ html, body{
 .infoSide{
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* top row stays top, Freeze stays bottom */
-    align-items: flex-start;        /* left aligned */
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 1rem;
 }
 
@@ -99,16 +99,17 @@ html, body{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* top-left */
+    justify-content: flex-start;
     gap: 0.75rem;
+    flex-wrap: wrap; /*Removed label wrapping*/
 }
 
-.labels{
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-}
+/*.labels{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    gap: 0.75rem;*/
+/*    flex-wrap: wrap;*/
+/*}*/
 
 
 #canvas{
