@@ -115,9 +115,9 @@ body{
     position: relative;
 }
 
-.colorEntryRow > :empty {
-    display: none !important;
-}
+/*.colorEntryRow > :empty {*/
+/*    display: none !important;*/
+/*}*/
 
 
 

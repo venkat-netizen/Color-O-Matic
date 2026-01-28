@@ -1,7 +1,7 @@
 const backButton = document.getElementById('backButton');
 const historyWindow = document.getElementById('historyWindow');
 
-let colorHistory = JSON.parse(localStorage.getItem('color-history')) || [];
+let existingColorHistory = JSON.parse(localStorage.getItem('color-history')) || [];
 
 
 
@@ -12,16 +12,17 @@ window.location.href = "index.html";
 
 historyWindow.innerHTML = '';
 
-for (const entry of colorHistory) {
+for (const entry of existingColorHistory) {
 
     //row
     const row = document.createElement('div');
     row.className = 'colorEntryRow';
+
     row.style.backgroundColor = entry.hex;
 
     //actual color
-    const colorPicture = document.createElement('div');
-    colorPicture.className = 'ColorEntryPicture';
+    //const colorPicture = document.createElement('div');
+    //colorPicture.className = 'ColorEntryPicture';
 
 
     //text
@@ -29,7 +30,8 @@ for (const entry of colorHistory) {
     text.className = 'ColorEntryName';
     text.textContent = `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) at ${entry.time} `
 
-    row.appendChild(colorPicture);
+    //row.appendChild(colorPicture);
+
     row.appendChild(text);
     historyWindow.appendChild(row);
 }

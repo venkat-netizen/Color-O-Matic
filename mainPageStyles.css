@@ -101,15 +101,9 @@ html, body{
     align-items: center;
     justify-content: flex-start;
     gap: 0.75rem;
-    flex-wrap: wrap; /*Removed label wrapping*/
+    flex-wrap: wrap;
 }
 
-/*.labels{*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    gap: 0.75rem;*/
-/*    flex-wrap: wrap;*/
-/*}*/
 
 
 #canvas{
@@ -167,8 +161,8 @@ html, body{
     .infoSide{
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* top row at top, freeze at bottom */
-        align-items: flex-start;        /* left aligned */
+        justify-content: space-between;
+        align-items: flex-start;
         gap: 1rem;
     }
 
@@ -205,9 +199,9 @@ html, body{
 }
 
 
-.infoSide #hexBox:empty,
-.infoSide #colorName:empty {
-    display: none;
-}
+/*.infoSide #hexBox:empty,*/
+/*.infoSide #colorName:empty {*/
+/*    display: none;*/
+/*}*/
 
 

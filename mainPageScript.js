@@ -11,15 +11,15 @@ const showHistoryButton = document.getElementById('showHistoryButton');
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
-const colorHistoryKey = "color-history";
-const maxColorHistory = 20;
+const COLOR_HISTORY_KEY = "color-history";
+const MAX_COLOR_HISTORY = 20;
 
-const range = 40;
-const xValue = Math.floor((canvas.width / 2) - (range / 2));
-const yValue = Math.floor((canvas.height / 2) - (range / 2));
+const RANGE_COLOR_IDENTIFICATION = 40;
+const xValue = Math.floor((canvas.width / 2) - (RANGE_COLOR_IDENTIFICATION / 2));
+const yValue = Math.floor((canvas.height / 2) - (RANGE_COLOR_IDENTIFICATION / 2));
 
 let isFrozen = false;
-let colorHistory = JSON.parse(localStorage.getItem(colorHistoryKey)) || [];
+let existingColorHistory = JSON.parse(localStorage.getItem(COLOR_HISTORY_KEY)) || [];
 
 let lastHex = null;
 let lastColorName = null;
@@ -33,7 +33,7 @@ navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}})
     .then(function(stream) {
         video.srcObject = stream;
 
-        requestAnimationFrame(frames);
+        requestAnimationFrame(renderFrames);
     });
 
 freezeButton.addEventListener('click', () => {
@@ -44,7 +44,7 @@ freezeButton.addEventListener('click', () => {
         addToColorHistory(lastHex, lastColorName);
     } else {
         freezeButton.textContent = 'FREEZE / SAVE';
-        frames();
+        renderFrames();
 
     }
 
@@ -55,29 +55,29 @@ showHistoryButton.addEventListener('click', () => {
         window.location.href = "colorHistory.html";
 });
 
-function frames() {
+function renderFrames() {
 
     if (isFrozen) return;
 
     context.drawImage(video, 0, 0);
 
-    context.strokeRect(xValue, yValue, range, range);
+    context.strokeRect(xValue, yValue, RANGE_COLOR_IDENTIFICATION, RANGE_COLOR_IDENTIFICATION);
 
-    const processingData = context.getImageData(xValue, yValue, range, range).data;
+    const processingData = context.getImageData(xValue, yValue, RANGE_COLOR_IDENTIFICATION, RANGE_COLOR_IDENTIFICATION).data;
     const rgb = getRgb(processingData);
 
-    const hex = getHexFromRgb(rgb)
+    const hexText = getHexFromRgb(rgb)
     const colorNameText = getColorFromRgb(rgb);
 
-    hexBox.textContent = hex.toUpperCase();
+    hexBox.textContent = hexText.toUpperCase();
     colorName.textContent = colorNameText.toUpperCase();
-    infoSide.style.backgroundColor = hex;
+    infoSide.style.backgroundColor = hexText;
 
 
-    lastHex = hex;
+    lastHex = hexText;
     lastColorName = colorNameText;
 
-    requestAnimationFrame(frames);
+    requestAnimationFrame(renderFrames);
 }
 
 function getRgb(processingData) {
@@ -92,9 +92,9 @@ function getRgb(processingData) {
         b += processingData[x + 2];
     }
 
-    r = Math.round(r / (range * range));
-    g = Math.round(g / (range * range));
-    b = Math.round(b / (range * range));
+    r = Math.round(r / (RANGE_COLOR_IDENTIFICATION * RANGE_COLOR_IDENTIFICATION));
+    g = Math.round(g / (RANGE_COLOR_IDENTIFICATION * RANGE_COLOR_IDENTIFICATION));
+    b = Math.round(b / (RANGE_COLOR_IDENTIFICATION * RANGE_COLOR_IDENTIFICATION));
 
 
     return [r, g, b];
@@ -109,8 +109,8 @@ function getHexFromRgb(rgb) {
 
 function getColorFromRgb(rgb) {
 
-    let minDistance = Infinity;
-    let colorName = "";
+    let smallestDistance = Infinity;
+    let closestColorName = "";
 
     for (const key in colorsList) {
 
@@ -122,13 +122,13 @@ function getColorFromRgb(rgb) {
 
         const distance = (distR * distR) + (distG * distG) + (distB * distB);
 
-        if (distance < minDistance) {
-            minDistance = distance;
-            colorName = colorsList[key].name;
+        if (distance < smallestDistance) {
+            smallestDistance = distance;
+            closestColorName = colorsList[key].name;
         }
     }
 
-    return colorName;
+    return closestColorName;
 
 }
 
@@ -139,13 +139,13 @@ function addToColorHistory(hex, colorName) {
         time: new Date().toLocaleTimeString()
     };
 
-    colorHistory.unshift(colorEntry);
+    existingColorHistory.unshift(colorEntry);
 
-    if (colorHistory.length > maxColorHistory) {
-        colorHistory.pop();
+    if (existingColorHistory.length > MAX_COLOR_HISTORY) {
+        existingColorHistory.pop();
     }
 
-    localStorage.setItem(colorHistoryKey, JSON.stringify(colorHistory));
+    localStorage.setItem(COLOR_HISTORY_KEY, JSON.stringify(existingColorHistory));
 }
 
 
