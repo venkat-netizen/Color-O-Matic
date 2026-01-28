@@ -15,7 +15,7 @@
     --shadow-1: 0 0.6rem 1.6rem rgba(0,0,0,0.55);
     --shadow-2: 0 0.15rem 0.45rem rgba(0,0,0,0.45);
     --lift:     0 0 0 0.06rem rgba(255,255,255,0.06) inset;
-    
+
 }
 
 .colorEntryRow{
@@ -80,6 +80,7 @@ body{
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
+    justify-content: center;
 }
 
 
