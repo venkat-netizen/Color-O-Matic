@@ -15,23 +15,17 @@ historyWindow.innerHTML = '';
 for (const entry of existingColorHistory) {
 
     //row
-    const row = document.createElement('div');
-    row.className = 'colorEntryRow';
-
-    row.style.backgroundColor = entry.hex;
-
-    //actual color
-    //const colorPicture = document.createElement('div');
-    //colorPicture.className = 'ColorEntryPicture';
+    const colorEntry = document.createElement('div');
+    colorEntry.className = 'colorEntry';
+    colorEntry.style.backgroundColor = entry.hex;
 
 
     //text
-    const text = document.createElement('div');
-    text.className = 'ColorEntryName';
-    text.textContent = `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) at ${entry.time} `
+    const colorEntryText = document.createElement('div');
+    colorEntryText.className = 'ColorEntryText';
+    colorEntryText.textContent = `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) at ${entry.time} `
 
-    //row.appendChild(colorPicture);
+    colorEntry.appendChild(colorEntryText);
+    historyWindow.appendChild(colorEntry);
 
-    row.appendChild(text);
-    historyWindow.appendChild(row);
 }

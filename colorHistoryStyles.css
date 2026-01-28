@@ -18,11 +18,11 @@
 
 }
 
-.colorEntryRow{
+.colorEntry{
     color: var(--text);
 }
 
-.colorEntryRow > *{
+.colorEntry > *{
     display: inline-block;
     max-width: 100%;
     padding: 0.2rem 0.55rem;
@@ -69,9 +69,6 @@ body{
     box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.08) inset;
 }
 
-#backButton:hover{
-    background: rgba(255,255,255,0.06);
-}
 
 
 #historyWindow{
@@ -86,7 +83,7 @@ body{
 }
 
 
-.colorEntryRow{
+.colorEntry{
     width: 12rem;
     height: 12rem;
     padding: 1rem;
@@ -111,18 +108,13 @@ body{
     box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
 }
 
-.colorEntryRow{
+.colorEntry{
     position: relative;
 }
 
-/*.colorEntryRow > :empty {*/
-/*    display: none !important;*/
-/*}*/
 
-
-
-.colorEntryRow .label,
-.colorEntryRow .value{
+.colorEntry .label,
+.colorEntry .value{
     padding: 0.15rem 0.45rem;
     border-radius: 0.5rem;
     background: rgba(0,0,0,0.35);
@@ -131,7 +123,7 @@ body{
 
 @media (max-width: 480px) {
 
-    .colorEntryRow{
+    .colorEntry{
         width: 15rem;
         height: 15rem;
         padding: 1.2rem;
@@ -139,13 +131,13 @@ body{
     }
 
 
-    .colorEntryRow > *{
+    .colorEntry > *{
         font-size: 1.1rem;
         line-height: 1.25;
     }
 
-    .colorEntryRow .label,
-    .colorEntryRow .value{
+    .colorEntry .label,
+    .colorEntry .value{
         font-size: 1.1rem;
         line-height: 1.25;
     }
