@@ -222,7 +222,6 @@ html, body{
     #freezeButton,
     #showHistoryButton{
         font-size: 1.05rem;
-        padding: 0.6rem 0.8rem;
         min-height: 44px;
         border-radius: 0.9rem;
     }
