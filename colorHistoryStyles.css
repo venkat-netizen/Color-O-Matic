@@ -115,6 +115,10 @@ body{
     position: relative;
 }
 
+.colorEntryRow > :empty {
+    display: none !important;
+}
+
 
 
 .colorEntryRow .label,
