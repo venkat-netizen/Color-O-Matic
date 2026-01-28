@@ -27,7 +27,9 @@ for (const entry of colorHistory) {
     //text
     const text = document.createElement('div');
     text.className = 'ColorEntryName';
-    text.textContent = `${entry.colorName.toUpperCase()}, ${entry.hex.toUpperCase()} at ${entry.time} `
+    text.textContent =
+        `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) on ${entry.date} at ${entry.time}`;
+
 
     row.appendChild(colorPicture);
     row.appendChild(text);
