@@ -81,9 +81,7 @@ body{
     gap: 1rem;
     padding: 1rem;
     margin: 0 auto;
-
-    justify-content: flex-start;
-    width: fit-content;
+    justify-content: center;
 
 }
 
