@@ -81,7 +81,7 @@ body {
     border-radius: 0.55rem;
 
     background: rgba(0, 0, 0, 0.45);
-    /box-shadow: var(--shadow-depth), var(--shadow-edge);
+    box-shadow: var(--shadow-depth), var(--shadow-edge);
 }
 
 
