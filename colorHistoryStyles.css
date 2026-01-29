@@ -13,18 +13,6 @@
 
 }
 
-
-.colorEntry > *{
-    display: inline-block;
-    max-width: 100%;
-    padding: 0.2rem 0.55rem;
-    border-radius: 0.55rem;
-
-    background: rgba(0,0,0,0.45);
-    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
-    backdrop-filter: blur(6px); /* optional; remove if you want */
-}
-
 html{ font-size: 16px; }
 
 body{
@@ -32,7 +20,6 @@ body{
     background: var(--page-color);
     color: var(--text);
 }
-
 
 .topbar{
     display: flex;
@@ -61,8 +48,6 @@ body{
     box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.08) inset;
 }
 
-
-
 #historyWindow{
     display: flex;
     flex-direction: row;
@@ -73,7 +58,6 @@ body{
     justify-content: center;
 
 }
-
 
 .colorEntry{
     width: 12rem;
@@ -104,16 +88,16 @@ body{
     color: var(--text);
 }
 
-/*
-.colorEntry .label,
-.colorEntry .value{
-    padding: 0.15rem 0.45rem;
-    border-radius: 0.5rem;
-    background: rgba(0,0,0,0.35);
-    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.12) inset;
+.colorEntry .colorEntryText{
+    display: inline-block;
+    max-width: 100%;
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.55rem;
+
+    background: rgba(0,0,0,0.45);
+    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
 }
 
-*/
 
 
 /* ---------- Phone -----------*/
