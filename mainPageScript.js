@@ -136,7 +136,7 @@ function addToColorHistory(hex, colorName) {
     const colorEntry = {
         colorName: colorName,
         hex: hex,
-        time: new Date().toLocaleTimeString()
+        timestamp: new Date().toISOString()
     };
 
     existingColorHistory.unshift(colorEntry);

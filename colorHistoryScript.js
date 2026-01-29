@@ -19,11 +19,12 @@ for (const entry of existingColorHistory) {
     colorEntry.className = 'colorEntry';
     colorEntry.style.backgroundColor = entry.hex;
 
-
+    const entryTimeStamp = new Date(entry.timestamp);
+    const timeStampText = entryTimeStamp.toLocaleString();
     //text
     const colorEntryText = document.createElement('div');
     colorEntryText.className = 'colorEntryText';
-    colorEntryText.textContent = `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) at ${entry.time} `
+    colorEntryText.textContent = `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) at ${timeStampText} `
 
     colorEntry.appendChild(colorEntryText);
     historyWindow.appendChild(colorEntry);
