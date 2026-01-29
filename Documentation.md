@@ -1,6 +1,7 @@
 # COLOR-O-MATIC
 
-This website uses your camera to detect the most prominent color in view and then displays its HEX code along with the closest matching color name.
+This website uses your camera to detect the most prominent color in view and then displays 
+its HEX code along with the closest matching color name.
 ## Features
 - Accesses user camera for live color detection (HTML5 Media Capture API).
 - HEX and closest color with name matching.
@@ -23,3 +24,8 @@ This project is cleanly structured, each page has separate HTML, CSS and JavaScr
    3. colorHistoryStyles.css
 3. Color List
    1. colorsList.js @author: Matthew Brush (codebrainz)
+
+### Notes: 
+- Requires HTTPS connection for camera access and for sensors to work.
+- Tested on Chrome and Firefox and works perfectly. Safari users can face some issues 
+due to stricter camera access (unable to test as I had no access to Apple device).
