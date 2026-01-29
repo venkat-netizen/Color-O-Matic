@@ -1,18 +1,16 @@
 :root{
-    --topbar-h: 5rem;
+    --topbar-height: 5rem;
     --pad: 1rem;
     --gap: 1rem;
+    --border-radius: 1rem;
 
-    --page-bg:  #0b0d10;
-    --topbar-bg:#0f1216;
-    --panel-a:  #12161c;
-    --panel-b:  #171c23;
-    --surface:  #1d232c;
-
+    --page-color:  #0b0d10;
+    --topbar-color:#0f1216;
+    --video-side-color:  #12161c;
+    --info-side-color:  #171c23;
     --text:     #e7edf5;
-    --muted:    #a8b3c3;
 
-    --radius: 1rem;
+
 
 
     --shadow-1: 0 0.6rem 1.6rem rgba(0,0,0,0.55);
@@ -27,19 +25,19 @@ html, body{
     margin: 0;
     padding: 0;
     height: 100%;
-    background: var(--page-bg);
+    background: var(--page-color);
     color: var(--text);
 }
 
 
 .topbar{
-    height: var(--topbar-h);
+    height: var(--topbar-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
 
-    background: var(--topbar-bg);
+    background: var(--topbar-color);
     box-shadow: var(--shadow-1), var(--lift);
 }
 
@@ -49,7 +47,7 @@ html, body{
 
 
 .layout{
-    height: calc(100dvh - var(--topbar-h));
+    height: calc(100dvh - var(--topbar-height));
     display: flex;
     gap: var(--gap);
     padding: 0 var(--pad) var(--pad);
@@ -59,22 +57,15 @@ html, body{
 .infoSide{
     min-width: 0;
     min-height: 0;
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
 
     box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
-
-
-    /*background-image: linear-gradient(
-            180deg,
-            rgba(255,255,255,0.04),
-            rgba(255,255,255,0.00)
-    );*/
 
     overflow: hidden;
 }
 
 .VideoPlayerSide{
-    background-color: var(--panel-a);
+    background-color: var(--video-side-color);
     padding: 0.5rem;
 
 
@@ -84,7 +75,7 @@ html, body{
 }
 
 .infoSide{
-    background-color: var(--panel-b);
+    background-color: var(--info-side-color);
     padding: 1rem;
 
 
@@ -137,7 +128,7 @@ html, body{
     border-radius: 0.55rem;
 
     background: rgba(0,0,0,0.45);
-    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
+    /*box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;*/
     backdrop-filter: blur(6px);
 }
 

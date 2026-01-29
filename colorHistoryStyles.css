@@ -1,6 +1,6 @@
 :root{
-    --page-bg:   #0b0d10;
-    --topbar-bg: #0f1216;
+    --page-color:   #0b0d10;
+    --topbar-color: #0f1216;
 
     --panel:     #12161c;
     --panel-2:   #171c23;
@@ -9,7 +9,7 @@
     --text:      #e7edf5;
     --muted:     #a8b3c3;
 
-    --radius: 0.75rem;
+    --border-radius: 0.75rem;
 
 
     --shadow-1: 0 0.6rem 1.6rem rgba(0,0,0,0.55);
@@ -37,7 +37,7 @@ html{ font-size: 16px; }
 
 body{
     margin: 0;
-    background: var(--page-bg);
+    background: var(--page-color);
     color: var(--text);
 }
 
@@ -48,7 +48,7 @@ body{
     gap: 0.75rem;
     padding: 0.75rem 1rem;
 
-    background: var(--topbar-bg);
+    background: var(--topbar-color);
     box-shadow: var(--shadow-1), var(--lift);
 }
 
@@ -95,7 +95,7 @@ body{
     gap: 0.5rem;
 
     border: 0;
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
 
 
     background-color: var(--panel);
