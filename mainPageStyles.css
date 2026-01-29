@@ -61,7 +61,7 @@ html, body{
     min-height: 0;
     border-radius: var(--radius);
 
-    /*box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);*/
+    box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
 
 
     /*background-image: linear-gradient(
