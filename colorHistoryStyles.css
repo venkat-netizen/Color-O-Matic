@@ -4,12 +4,11 @@
     --page-color: #0b0d10;
     --topbar-color: #0f1216;
     --background-color: #12161c;
-    --text: #e7edf5;
+    --text-color: #e7edf5;
 
 
-    --shadow-1: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.55);
-    --shadow-2: 0 0.15rem 0.45rem rgba(0, 0, 0, 0.45);
-    --lift: 0 0 0 0.06rem rgba(255, 255, 255, 0.06) inset;
+    --shadow-depth: 0 0.8rem 2.0rem rgba(0,0,0,0.55);
+    --shadow-edge: 0 0 0 0.06rem rgba(255,255,255,0.06) inset;
 
 }
 
@@ -20,7 +19,7 @@ html {
 body {
     margin: 0;
     background: var(--page-color);
-    color: var(--text);
+    color: var(--text-color);
 }
 
 .topbar {
@@ -30,7 +29,7 @@ body {
     padding: 0.75rem 1rem;
 
     background: var(--topbar-color);
-    box-shadow: var(--shadow-1), var(--lift);
+    box-shadow: var(--shadow-depth), var(--shadow-edge);
 }
 
 .topbar h1 {
@@ -40,15 +39,12 @@ body {
 
 #backButton {
     background: #1d232c;
-    color: var(--text);
+    color: var(--text-color);
     border: 0.06rem solid rgba(255, 255, 255, 0.12);
     font-size: 1.5rem;
     padding: 0.25rem;
     border-radius: 0.6rem;
 
-
-
-    /*box-shadow: 0 0 0 0.06rem rgba(255, 255, 255, 0.08) inset;*/
 }
 
 #historyWindow {
@@ -74,7 +70,7 @@ body {
 
 
     background-color: var(--background-color);
-    box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
+    box-shadow: var(--shadow-depth), var(--shadow-edge);
 
 }
 
@@ -85,11 +81,11 @@ body {
     border-radius: 0.55rem;
 
     background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 0 0 0.06rem rgba(255, 255, 255, 0.10) inset;
+    /box-shadow: var(--shadow-depth), var(--shadow-edge);
 }
 
 
-/* ---------- Phone -----------*/
+/* Phone */
 @media (max-width: 480px) {
 
     .colorEntry {
@@ -99,7 +95,7 @@ body {
         gap: 0.75rem;
     }
 
-    .colorEntry > * {
+    .colorEntry .colorEntryText {
         font-size: 1.1rem;
         line-height: 1.25;
     }

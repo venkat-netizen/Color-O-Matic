@@ -8,12 +8,11 @@
     --topbar-color: #0f1216;
     --video-side-color: #12161c;
     --info-side-color: #171c23;
-    --text: #e7edf5;
+    --text-color: #e7edf5;
 
 
-    --shadow-1: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.55);
-    --shadow-2: 0 0.15rem 0.45rem rgba(0, 0, 0, 0.45);
-    --lift: 0 0 0 0.06rem rgba(255, 255, 255, 0.06) inset;
+    --shadow-depth: 0 0.8rem 2.0rem rgba(0,0,0,0.55);
+    --shadow-edge: 0 0 0 0.06rem rgba(255,255,255,0.06) inset;
 }
 
 
@@ -26,7 +25,7 @@ html, body {
     padding: 0;
     height: 100%;
     background: var(--page-color);
-    color: var(--text);
+    color: var(--text-color);
 }
 
 
@@ -38,7 +37,7 @@ html, body {
     padding: 0 1rem;
 
     background: var(--topbar-color);
-    box-shadow: var(--shadow-1), var(--lift);
+    box-shadow: var(--shadow-depth), var(--shadow-edge);
 }
 
 .topbar h1 {
@@ -59,7 +58,7 @@ html, body {
     min-height: 0;
     border-radius: var(--border-radius);
 
-    box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
+    box-shadow: var(--shadow-depth), var(--shadow-edge);
 
     overflow: hidden;
 }
@@ -112,7 +111,7 @@ html, body {
 #freezeButton,
 #showHistoryButton {
     background: #1d232c;
-    color: var(--text);
+    color: var(--text-color);
     border: 0.06rem solid rgba(255, 255, 255, 0.12);
     padding: 0.75rem 1rem;
     border-radius: 0.85rem;
@@ -130,7 +129,7 @@ html, body {
 }
 
 
-/* ---------- PORTRAIT ---------- */
+/* PORTRAIT */
 @media (orientation: portrait) {
 
     .layout {
@@ -153,7 +152,7 @@ html, body {
 }
 
 
-/* ---------- LANDSCAPE ---------- */
+/* LANDSCAPE */
 @media (orientation: landscape) {
 
     .layout {
