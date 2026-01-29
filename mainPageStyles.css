@@ -66,11 +66,11 @@ html, body{
     box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
 
 
-    background-image: linear-gradient(
+    /*background-image: linear-gradient(
             180deg,
             rgba(255,255,255,0.04),
             rgba(255,255,255,0.00)
-    );
+    );*/
 
     overflow: hidden;
 }
