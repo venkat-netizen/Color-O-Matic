@@ -1,3 +1,4 @@
+/* Reused design values*/
 :root {
     --border-radius: 0.75rem;
 
@@ -16,12 +17,15 @@ html {
     font-size: 16px;
 }
 
+
 body {
     margin: 0;
     background: var(--page-color);
     color: var(--text-color);
 }
 
+
+/*Top bar styling*/
 .topbar {
     display: flex;
     align-items: center;
@@ -32,11 +36,15 @@ body {
     box-shadow: var(--shadow-depth), var(--shadow-edge);
 }
 
+
+/*Header layout*/
 .topbar h1 {
     margin: 0;
     font-size: 1.5rem;
 }
 
+
+/*Back button styling*/
 #backButton {
     background: #1d232c;
     color: var(--text-color);
@@ -47,6 +55,8 @@ body {
 
 }
 
+
+/*Grid for history*/
 #historyWindow {
     display: flex;
     flex-wrap: wrap;
@@ -56,6 +66,8 @@ body {
 
 }
 
+
+/*Color card styling and layout*/
 .colorEntry {
     width: 12rem;
     height: 12rem;
@@ -74,6 +86,7 @@ body {
 
 }
 
+/*Information in color cars styling and layout*/
 .colorEntry .colorEntryText {
 
     max-width: 100%;
@@ -84,7 +97,7 @@ body {
 }
 
 
-/* Phone */
+/* Phone level styling and layout*/
 @media (max-width: 480px) {
 
     .colorEntry {

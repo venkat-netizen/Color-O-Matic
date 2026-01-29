@@ -1,3 +1,5 @@
+/* Reused design values*/
+
 :root {
     --topbar-height: 5rem;
     --pad: 1rem;
@@ -20,6 +22,8 @@
     box-sizing: border-box;
 }
 
+
+/*Base page*/
 html, body {
     margin: 0;
     padding: 0;
@@ -29,6 +33,7 @@ html, body {
 }
 
 
+/*Top bar layout and styling*/
 .topbar {
     height: var(--topbar-height);
     display: flex;
@@ -40,11 +45,14 @@ html, body {
     box-shadow: var(--shadow-depth), var(--shadow-edge);
 }
 
+
+/*Header layout*/
 .topbar h1 {
     margin: 0;
 }
 
 
+/*Main page layout after the top bar*/
 .layout {
     height: calc(100dvh - var(--topbar-height));
     display: flex;
@@ -52,6 +60,8 @@ html, body {
     padding: 0 var(--pad) var(--pad);
 }
 
+
+/*Shared side styling*/
 .VideoPlayerSide,
 .infoSide {
     min-width: 0;
@@ -63,6 +73,8 @@ html, body {
     overflow: hidden;
 }
 
+
+/*Video side styling*/
 .VideoPlayerSide {
     background-color: var(--video-side-color);
     padding: 0.5rem;
@@ -73,6 +85,8 @@ html, body {
     justify-content: center;
 }
 
+
+/*Info side styling*/
 .infoSide {
     background-color: var(--info-side-color);
     padding: 1rem;
@@ -86,6 +100,7 @@ html, body {
 }
 
 
+/*Information styling in info side*/
 .infoTop {
 
     width: 100%;
@@ -98,6 +113,7 @@ html, body {
 }
 
 
+/*Square displa area*/
 #canvas {
 
     display: block;
@@ -108,6 +124,7 @@ html, body {
 }
 
 
+/*Buttons shared styling*/
 #freezeButton,
 #showHistoryButton {
     background: #1d232c;
@@ -117,7 +134,7 @@ html, body {
     border-radius: 0.85rem;
 }
 
-
+/*Background pilling for info text*/
 .infoSide #hexBox,
 .infoSide #colorName {
     display: inline-block;
@@ -129,7 +146,7 @@ html, body {
 }
 
 
-/* PORTRAIT */
+/* PORTRAIT level adjustments */
 @media (orientation: portrait) {
 
     .layout {
@@ -152,7 +169,7 @@ html, body {
 }
 
 
-/* LANDSCAPE */
+/* LANDSCAPE level adjustments*/
 @media (orientation: landscape) {
 
     .layout {

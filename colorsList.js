@@ -1,3 +1,7 @@
+// Author: Matthew Brush (codebrainz)
+// Source: https://github.com/codebrainz
+
+
 const colorsList = {
     "air_force_blue_raf": {
         "name": "Air Force Blue (Raf)",

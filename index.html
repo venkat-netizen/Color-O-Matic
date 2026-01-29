@@ -15,6 +15,7 @@
 
 <body>
 
+    <!-- Top navigation bar, has the title and the history button. -->
     <header class="topbar">
 
         <h1>COLOR-O-MATIC</h1>
@@ -22,12 +23,16 @@
 
     </header>
 
+    <!-- The rest of the page. Divided into two sides the video and the info side. -->
     <main class="layout">
+
+        <!-- This is the side where the video is shown. -->
         <div class="VideoPlayerSide">
             <canvas id="canvas" width="400" height="400"></canvas>
             <video id="liveVideo" autoplay muted playsinline style="display:none"></video>
         </div>
 
+        <!-- This is the side where the color, closest name and hex are shown. -->
         <div class="infoSide" id="infoSide">
             <div class="infoTop">
 
@@ -36,6 +41,7 @@
 
             </div>
 
+            <!-- Freeze button to stop the camera and to save the color to history. -->
             <button id="freezeButton">FREEZE / SAVE</button>
 
         </div>

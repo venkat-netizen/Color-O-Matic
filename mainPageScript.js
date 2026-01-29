@@ -1,19 +1,22 @@
 import colorsList from './colorsList.js';
 
+//All the elements used for this page.
 const hexBox = document.getElementById('hexBox');
 const colorName = document.getElementById('colorName');
 const infoSide = document.getElementById("infoSide");
-
-
 const freezeButton = document.getElementById('freezeButton');
 const showHistoryButton = document.getElementById('showHistoryButton');
-
 const canvas = document.getElementById('canvas');
+
+
+
 const context = canvas.getContext('2d');
 
+//The key for accessing the history and max number of colors allowed in the history page.
 const COLOR_HISTORY_KEY = "color-history";
 const MAX_COLOR_HISTORY = 20;
 
+//The number that determines the area that will be processed for the color.
 const RANGE_COLOR_IDENTIFICATION = 40;
 const xValue = Math.floor((canvas.width / 2) - (RANGE_COLOR_IDENTIFICATION / 2));
 const yValue = Math.floor((canvas.height / 2) - (RANGE_COLOR_IDENTIFICATION / 2));
@@ -26,9 +29,7 @@ let lastColorName = null;
 let video = document.querySelector('#liveVideo');
 
 
-
-
-
+//Start (back) camera, show it in video and start renderFrames
 navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}})
     .then(function(stream) {
         video.srcObject = stream;
@@ -36,6 +37,7 @@ navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}})
         requestAnimationFrame(renderFrames);
     });
 
+//Freeze button code.
 freezeButton.addEventListener('click', () => {
     isFrozen = !isFrozen;
 
@@ -51,10 +53,14 @@ freezeButton.addEventListener('click', () => {
 
 });
 
+
+//Show history button code. Goes to next page.
 showHistoryButton.addEventListener('click', () => {
         window.location.href = "colorHistory.html";
 });
 
+
+//Samples the square area for its color and updates the UI. Then restarts.
 function renderFrames() {
 
     if (isFrozen) return;
@@ -80,6 +86,8 @@ function renderFrames() {
     requestAnimationFrame(renderFrames);
 }
 
+
+//Averages all the RGB values of the pixels in the sample area.
 function getRgb(processingData) {
     let r = 0;
     let g = 0;
@@ -101,12 +109,16 @@ function getRgb(processingData) {
 
 }
 
+
+//Gets the hex value from RGB
 function getHexFromRgb(rgb) {
    return  '#' + rgb[0].toString(16).padStart(2, '0') +
        rgb[1].toString(16).padStart(2, '0') +
        rgb[2].toString(16).padStart(2, '0');
 }
 
+
+//Finds the closest named color from the colorsList by comparing RGB distance
 function getColorFromRgb(rgb) {
 
     let smallestDistance = Infinity;
@@ -132,6 +144,8 @@ function getColorFromRgb(rgb) {
 
 }
 
+
+//Adds a new color entry to the history, if color was saved.
 function addToColorHistory(hex, colorName) {
     const colorEntry = {
         colorName: colorName,

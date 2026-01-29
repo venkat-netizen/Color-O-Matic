@@ -1,3 +1,4 @@
+//All the elements used for this page.
 const backButton = document.getElementById('backButton');
 const historyWindow = document.getElementById('historyWindow');
 
@@ -12,15 +13,15 @@ window.location.href = "index.html";
 
 historyWindow.innerHTML = '';
 
+//Build and append one color entry + text from history.
 for (const entry of existingColorHistory) {
 
-    //row
+
     const colorEntry = document.createElement('div');
     colorEntry.className = 'colorEntry';
     colorEntry.style.backgroundColor = entry.hex;
 
 
-    //text
     const colorEntryText = document.createElement('div');
     colorEntryText.className = 'colorEntryText';
     colorEntryText.textContent = `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) at ${entry.time} `
