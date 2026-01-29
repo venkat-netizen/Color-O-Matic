@@ -1,15 +1,10 @@
 :root{
+    --border-radius: 0.75rem;
+
     --page-color:   #0b0d10;
     --topbar-color: #0f1216;
-
-    --panel:     #12161c;
-    --panel-2:   #171c23;
-    --surface:   #1d232c;
-
+    --background-color:     #12161c;
     --text:      #e7edf5;
-    --muted:     #a8b3c3;
-
-    --border-radius: 0.75rem;
 
 
     --shadow-1: 0 0.6rem 1.6rem rgba(0,0,0,0.55);
@@ -18,9 +13,6 @@
 
 }
 
-.colorEntry{
-    color: var(--text);
-}
 
 .colorEntry > *{
     display: inline-block;
@@ -98,7 +90,7 @@ body{
     border-radius: var(--border-radius);
 
 
-    background-color: var(--panel);
+    background-color: var(--background-color);
     background-image: linear-gradient(
             180deg,
             rgba(255,255,255,0.04),
@@ -106,13 +98,13 @@ body{
     );
 
     box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
-}
 
-.colorEntry{
     position: relative;
+
+    color: var(--text);
 }
 
-
+/*
 .colorEntry .label,
 .colorEntry .value{
     padding: 0.15rem 0.45rem;
@@ -121,6 +113,10 @@ body{
     box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.12) inset;
 }
 
+*/
+
+
+/* ---------- Phone -----------*/
 @media (max-width: 480px) {
 
     .colorEntry{
