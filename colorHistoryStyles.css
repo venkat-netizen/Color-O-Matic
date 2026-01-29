@@ -1,27 +1,29 @@
-:root{
+:root {
     --border-radius: 0.75rem;
 
-    --page-color:   #0b0d10;
+    --page-color: #0b0d10;
     --topbar-color: #0f1216;
-    --background-color:     #12161c;
-    --text:      #e7edf5;
+    --background-color: #12161c;
+    --text: #e7edf5;
 
 
-    --shadow-1: 0 0.6rem 1.6rem rgba(0,0,0,0.55);
-    --shadow-2: 0 0.15rem 0.45rem rgba(0,0,0,0.45);
-    --lift:     0 0 0 0.06rem rgba(255,255,255,0.06) inset;
+    --shadow-1: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.55);
+    --shadow-2: 0 0.15rem 0.45rem rgba(0, 0, 0, 0.45);
+    --lift: 0 0 0 0.06rem rgba(255, 255, 255, 0.06) inset;
 
 }
 
-html{ font-size: 16px; }
+html {
+    font-size: 16px;
+}
 
-body{
+body {
     margin: 0;
     background: var(--page-color);
     color: var(--text);
 }
 
-.topbar{
+.topbar {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -31,24 +33,25 @@ body{
     box-shadow: var(--shadow-1), var(--lift);
 }
 
-.topbar h1{
+.topbar h1 {
     margin: 0;
     font-size: 1.5rem;
 }
 
-#backButton{
-    background: transparent;
+#backButton {
+    background: #1d232c;
     color: var(--text);
-    border: 0;
+    border: 0.06rem solid rgba(255, 255, 255, 0.12);
     font-size: 1.5rem;
-    cursor: pointer;
     padding: 0.25rem;
-
     border-radius: 0.6rem;
-    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.08) inset;
+
+
+
+    /*box-shadow: 0 0 0 0.06rem rgba(255, 255, 255, 0.08) inset;*/
 }
 
-#historyWindow{
+#historyWindow {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -57,7 +60,7 @@ body{
 
 }
 
-.colorEntry{
+.colorEntry {
     width: 12rem;
     height: 12rem;
     padding: 1rem;
@@ -71,39 +74,32 @@ body{
 
 
     background-color: var(--background-color);
-    /*background-image: linear-gradient(
-            180deg,
-            rgba(255,255,255,0.04),
-            rgba(255,255,255,0.00)
-    );*/
-
     box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
 
 }
 
-.colorEntry .colorEntryText{
+.colorEntry .colorEntryText {
 
     max-width: 100%;
     padding: 0.2rem 0.55rem;
     border-radius: 0.55rem;
 
-    background: rgba(0,0,0,0.45);
-    box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 0 0.06rem rgba(255, 255, 255, 0.10) inset;
 }
-
 
 
 /* ---------- Phone -----------*/
 @media (max-width: 480px) {
 
-    .colorEntry{
+    .colorEntry {
         width: 15rem;
         height: 15rem;
         padding: 1.2rem;
         gap: 0.75rem;
     }
-    
-    .colorEntry > *{
+
+    .colorEntry > * {
         font-size: 1.1rem;
         line-height: 1.25;
     }
