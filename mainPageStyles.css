@@ -129,7 +129,7 @@ html, body{
 
     background: rgba(0,0,0,0.45);
     /*box-shadow: 0 0 0 0.06rem rgba(255,255,255,0.10) inset;*/
-    backdrop-filter: blur(6px);
+    /*backdrop-filter: blur(6px);*/
 }
 
 
