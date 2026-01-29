@@ -50,11 +50,11 @@ body{
 
 #historyWindow{
     display: flex;
-    flex-direction: row;
+    /*flex-direction: row;*/
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     justify-content: center;
 
 }
@@ -70,7 +70,7 @@ body{
     align-items: flex-start;
     gap: 0.5rem;
 
-    border: 0;
+    /*border: 0;*/
     border-radius: var(--border-radius);
 
 
@@ -83,13 +83,13 @@ body{
 
     box-shadow: var(--shadow-1), var(--shadow-2), var(--lift);
 
-    position: relative;
+    /*position: relative;*/
 
-    color: var(--text);
+    /*color: var(--text);*/
 }
 
 .colorEntry .colorEntryText{
-    display: inline-block;
+    /*display: inline-block;*/
     max-width: 100%;
     padding: 0.2rem 0.55rem;
     border-radius: 0.55rem;
@@ -116,10 +116,10 @@ body{
         line-height: 1.25;
     }
 
-    .colorEntry .label,
+    /*.colorEntry .label,
     .colorEntry .value{
         font-size: 1.1rem;
         line-height: 1.25;
-    }
+    }*/
 }
 
