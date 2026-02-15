@@ -24,7 +24,7 @@ for (const entry of existingColorHistory) {
 
     const colorEntryText = document.createElement('div');
     colorEntryText.className = 'colorEntryText';
-    colorEntryText.textContent = `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()}) at ${entry.time} `
+    colorEntryText.textContent = `${entry.colorName.toUpperCase()} (${entry.hex.toUpperCase()})`
 
     colorEntry.appendChild(colorEntryText);
     historyWindow.appendChild(colorEntry);
